@@ -1,0 +1,15 @@
+attaching to running vm
+
+zabbix server
+    create java process monitoring templates
+        process discovery
+        monitoring items
+
+zabbix agent 
+    java process discovery and find out startup script
+        java_home
+        
+java agent 
+    attach to running java
+    upload embeded items to zabbix server     
+https://blogs.oracle.com/CoreJavaTechTips/entry/the_attach_api
