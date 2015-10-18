@@ -10,17 +10,22 @@ public class MonitorAgent {
 
 	public static void main(String[] args)throws Exception {
 		// TODO Auto-generated method stub
-		if (args.length != 1) {
-	      System.err.println("Please provide process id");
+		if (args.length != 4) {
+	      System.err.println("Please provide process id zabbix-host zabbix-port host-guid");
 	      System.exit(-1);
 	    }
-	    VirtualMachine vm = VirtualMachine.attach(args[0]);
+		String processPid= args[0];
+		String zabbixHost = args[1];
+		String zabbixPort = args[2];
+		String hostGuid = args[3];
+		
+	    VirtualMachine vm = VirtualMachine.attach(processPid);
 	    String connectorAddr = vm.getAgentProperties().getProperty(
 	      "com.sun.management.jmxremote.localConnectorAddress");
 	    if (connectorAddr == null) {
 	      String agent = vm.getSystemProperties().getProperty(
 	        "java.home")+File.separator+"lib"+File.separator+
-	        "management-agent.jar";
+ 	        "management-agent.jar";
 	      vm.loadAgent(agent);
 	      connectorAddr = vm.getAgentProperties().getProperty(
 	        "com.sun.management.jmxremote.localConnectorAddress");

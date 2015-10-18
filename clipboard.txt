@@ -13,3 +13,9 @@ java agent
     attach to running java
     upload embeded items to zabbix server     
 https://blogs.oracle.com/CoreJavaTechTips/entry/the_attach_api
+
+test java zabbix sender
+test java agent
+test zabbix agent auto discovery
+test zabbix server auto discovery item
+
